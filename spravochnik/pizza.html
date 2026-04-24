@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пицца</title>
+</head>
+<body>
+    <div class="zagol">
+        <h1>Пицца</h1>
+    </div>
+    <a href="index.html">
+        <button>Назад</button>
+    </a>
+
+    <div class="vibor">
+        <h2 id="pizzaName">Выбери пиццу</h2>
+    </div>
+
+<style>
+
+    .vibor{
+        padding: 15px;
+    }
+
+    
+.zagol{
+    padding: 15px;
+}
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 250px;
+
+    }
+    button{
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background-color: #ff7a00;
+        color: white;
+        cursor: pointer;
+        transition: 0.25s ease;
+    }
+
+    button:hover{
+        background-color: #ff9500;
+        transform: scale(1.03);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+    button:active{
+        transform: scale(0.98);
+    }
+
+    .container{
+        display: flex;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .content{
+        flex: 1;
+        background: #f7f7f7;
+        padding: 20px;
+        border-radius: 15px;
+            }
+
+            .content h2{
+                margin-bottom: 15px;
+            }
+
+            .content h3{
+                margin-top: 15px;
+                color: #ff7a00;
+            }
+
+            .content ul{
+                list-style: none;
+                padding: 0;
+            }
+
+            .content li {
+                background: white;
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 8px;
+                border-left: 4px solid #ff7a00;
+            }
+
+            body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #fff8f0,
+                #ffe5cc
+            );
+            }
+</style>
+
+<div class="container">
+    <div class="menu">
+    <button id="parmaBtn">Пицца с пармской ветчиной</button>
+<button id="peperoniBtn">Пицца пеперони</button>
+<button id="cheeseBtn">Пицца 4 сыра</button>
+<button id="munhenBtn">Пицца мюнхенская</button>
+<button id="barbekuBtn">Пицца барбекю</button>
+<button id="diabloBtn">Пицца диабло</button>
+<button id="grushaBtn">Пицца с грушей</button>
+<button id="cezarBtn">Пицца цезарь</button>
+<button id="juletaBtn">Пицца жульета с курицей</button>
+<button id="seaBtn">Пицца морская империя</button>
+<button id="lososBtn">Пицца с лососем</button>
+<button id="gavaiBtn">Пицца гавайская</button>
+
+</div>
+
+
+<div class="content">
+    <h3 id="size25"></h3>
+<ul id="list25"></ul>
+
+<h3 id="size35"></h3>
+<ul id="list35"></ul>
+
+<h3 id="size50"></h3>
+<ul id="list50"></ul>
+</div>
+
+</div>
+
+<script>
+    const parmaBtn = document.querySelector("#parmaBtn");
+    const peperoniBtn = document.querySelector("#peperoniBtn");
+    const cheeseBtn = document.querySelector("#cheeseBtn");
+    const munhenBtn = document.querySelector("#munhenBtn");
+    const barbekuBtn = document.querySelector("#barbekuBtn");
+    const diabloBtn = document.querySelector("#diabloBtn");
+    const grushaBtn = document.querySelector("#grushaBtn");
+    const cezarBtn = document.querySelector("#cezarBtn");
+    const juletaBtn = document.querySelector("#juletaBtn");
+    const seaBtn = document.querySelector("#seaBtn");
+    const lososBtn = document.querySelector("#lososBtn");
+    const gavaiBtn = document.querySelector("#gavaiBtn");
+    const name = document.querySelector("#pizzaName");
+
+    const size25 = document.querySelector("#size25");
+    const size35 = document.querySelector("#size35");
+    const size50 = document.querySelector("#size50");
+
+    const list25 = document.querySelector("#list25");
+    const list35 = document.querySelector("#list35");
+    const list50 = document.querySelector("#list50");
+    
+    parmaBtn.addEventListener("click", function(){
+
+        name.textContent = "С пармской ветчиной";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Шея сыровяленая</li>
+        <li>Помидор - 6 долек</li>
+        <li>Сыр филадельфия - 8 шариков</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Шея сыровяленая</li>
+        <li>Помидор - 8 долек</li>
+        <li>Сыр филадельфия - 10 шариков</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Шея сыровяленая</li>
+        <li>Помидор - 8 долек</li>
+        <li>Сыр филадельфия - 12 шариков</li>
+        `;
+            })
+
+
+            peperoniBtn.addEventListener("click", function(){
+                name.textContent = "Пеперони";
+
+                size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Шампиньоны</li>
+        <li>Сервелат</li>
+        `;
+
+        list35.innerHTML = `
+        <li>Тесто - 300г</li>
+        <li>Соус - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Шампиньоны</li>
+        <li>Сервелат</li>
+        `;
+
+        list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус - 1.2 ложка</li>
+        <li>Сыр - 350г</li>
+        <li>Шампиньоны</li>
+        <li>Сервелат</li>
+        `;
+            })
+
+            cheeseBtn.addEventListener("click", function(){
+                name.textContent = "4 сыра"
+                size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Пармезан</li>
+        <li>Дорблю</li>
+        `;
+
+        list35.innerHTML = `
+        <li>Тесто - 300г</li>
+        <li>Соус - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Пармезан</li>
+        <li>Дорблю</li>
+        `;
+
+        list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус - 1.2 ложка</li>
+        <li>Сыр - 350г</li>
+        <li>Пармезан</li>
+        <li>Дорблю</li>
+        `;
+            })
+
+
+
+munhenBtn.addEventListener("click", function(){
+
+        name.textContent = "Мюнхенская";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Бекон</li>
+        <li>Помидор - 6 долек</li>
+        <li>Ветчина</li>
+        <li>Охотничьи колбаски</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Бекон</li>
+        <li>Помидор - 6 долек</li>
+        <li>Ветчина</li>
+        <li>Охотничьи колбаски</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Бекон</li>
+        <li>Помидор - 6 долек</li>
+        <li>Ветчина</li>
+        <li>Охотничьи колбаски</li>
+        `;
+            });
+
+            barbekuBtn.addEventListener("click", function(){
+
+        name.textContent = "Барбекю";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Бекон</li>
+        <li>Курица</li>
+        <li>Ветчина</li>
+        <li>Сервелат</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Бекон</li>
+        <li>Курица</li>
+        <li>Ветчина</li>
+        <li>Сервелат</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Бекон</li>
+        <li>Курица</li>
+        <li>Ветчина</li>
+        <li>Сервелат</li>
+        `;
+            });
+
+
+            diabloBtn.addEventListener("click", function(){
+
+        name.textContent = "Диабло";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Грибы</li>
+        <li>Лук репчатиый</li>
+        <li>Бекон</li>
+        <li>Колбаски охотничьи</li>
+        <li>Сервелат</li>
+        <li>Помидор</li>
+        <li>Перец халапеньо</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Грибы</li>
+        <li>Лук репчатиый</li>
+        <li>Бекон</li>
+        <li>Колбаски охотничьи</li>
+        <li>Сервелат</li>
+        <li>Помидор</li>
+        <li>Перец халапеньо</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Грибы</li>
+        <li>Лук репчатиый</li>
+        <li>Бекон</li>
+        <li>Колбаски охотничьи</li>
+        <li>Сервелат</li>
+        <li>Помидор</li>
+        <li>Перец халапеньо</li>
+        `;
+            });
+
+            grushaBtn.addEventListener("click", function(){
+
+        name.textContent = "С Грушей ";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Пармезан</li>
+        <li>Дорблю</li>
+        <li>Груша</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Пармезан</li>
+        <li>Дюоблю</li>
+        <li>Груша</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Пармезан</li>
+        <li>Дюрблю</li>
+        <li>Груша</li>
+        `;
+            });
+
+            cezarBtn.addEventListener("click", function(){
+
+        name.textContent = "Цезарь ";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Курица</li>
+        <li>Лист салата</li>
+        <li>Соус цезарь</li>
+        <li>Сухарики</li>
+        <li>Помидоры черри</li>
+        <li>Яйцо перепелинное</li>
+        <li>Пармезан</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Курица</li>
+        <li>Лист салата</li>
+        <li>Соус цезарь</li>
+        <li>Сухарики</li>
+        <li>Помидоры черри</li>
+        <li>Яйцо перепелинное</li>
+        <li>Пармезан</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Курица</li>
+        <li>Лист салата</li>
+        <li>Соус цезарь</li>
+        <li>Сухарики</li>
+        <li>Помидоры черри</li>
+        <li>Яйцо перепелинное</li>
+        <li>Пармезан</li>
+        `;
+            });
+
+            juletaBtn.addEventListener("click", function(){
+
+        name.textContent = "Жульета с курицей";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Грибы</li>
+        <li>Курица</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Грибы</li>
+        <li>Курица</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Грибы</li>
+        <li>Курица</li>
+        `;
+            });
+
+            seaBtn.addEventListener("click", function(){
+
+        name.textContent = "Морская империя";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Креветка</li>
+        <li>Гребешок</li>
+        <li>Лосось</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Креветка</li>
+        <li>Гребешок</li>
+        <li>Лосось</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Креветка</li>
+        <li>Гребешок</li>
+        <li>Лосось</li>
+        `;
+            });
+
+        lososBtn.addEventListener("click", function(){
+
+        name.textContent = "С лососем";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Лосось</li>
+        <li>Помидор</li>
+        <li>Оливки</li>
+        <li>Сыр филадельфия</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Лосось</li>
+        <li>Помидор</li>
+        <li>Оливки</li>
+        <li>Сыр филадельфия</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Лосось</li>
+        <li>Помидор</li>
+        <li>Оливки</li>
+        <li>Сыр филадельфия</li>
+        `;
+            });
+
+            gavaiBtn.addEventListener("click", function(){
+
+        name.textContent = "Гавайская";
+
+        size25.textContent = "25 см";
+        size35.textContent = "35 см";
+        size50.textContent = "50 см";
+
+        list25.innerHTML = `
+        <li>Тесто - 150г</li>
+        <li>Соус белый - 1/2 ложки</li>
+        <li>Сыр - 100г</li>
+        <li>Курица</li>
+        <li>Ананас</li>
+        `;
+
+         list35.innerHTML = `
+        <li>Тесто - 300г </li>
+        <li>Соус белый - 1 ложка</li>
+        <li>Сыр - 170г</li>
+        <li>Курица</li>
+        <li>Ананас</li>
+        `;
+
+         list50.innerHTML = `
+        <li>Тесто - 500г</li>
+        <li>Соус белый - 1.2 ложки</li>
+        <li>Сыр - 350г</li>
+        <li>Курица</li>
+        <li>Ананас</li>
+        `;
+            });
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
